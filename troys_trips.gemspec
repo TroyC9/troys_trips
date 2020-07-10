@@ -27,5 +27,6 @@ Gem::Specification.new do |spec|
   spec.executables   = ["tt_cli"]
   spec.require_paths = ["lib"]
   spec.add_dependency "http"
-  
+  spec.add_dependency "httparty"
+
 end
