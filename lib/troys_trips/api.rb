@@ -1,7 +1,11 @@
 module TroysTrips
     class API
-        url = URI("https://tripadvisor1.p.rapidapi.com/hotels/get-details?adults=1&nights=2&currency=USD&lang=en_US&child_rm_ages=7%252C10&checkin=2020-01-15&location_id=10359481")
-
+        require 'uri'
+        require 'net/http'
+        require 'openssl'
+        
+        url = URI("https://tripadvisor1.p.rapidapi.com/locations/search?location_id=1&limit=30&sort=relevance&offset=0&lang=en_US&currency=USD&units=km&query=atlanta")
+        
         http = Net::HTTP.new(url.host, url.port)
         http.use_ssl = true
         http.verify_mode = OpenSSL::SSL::VERIFY_NONE
@@ -12,6 +16,5 @@ module TroysTrips
         
         response = http.request(request)
         puts response.read_body
-
     end
 end
