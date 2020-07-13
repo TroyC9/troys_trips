@@ -1,6 +1,8 @@
 require "http"
 require "pry"
 require "httparty"
+require "openssl"
+require "net/http"
 require_relative "troys_trips/version"
 require_relative "troys_trips/api"
 require_relative "troys_trips/cli"
